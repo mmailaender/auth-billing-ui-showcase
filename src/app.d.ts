@@ -3,11 +3,21 @@
 declare global {
 	namespace App {
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			token: string | undefined;
+		}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			dialog?: 'user-profile' | 'organization-profile';
+		}
 		// interface Platform {}
 	}
+}
+
+declare module '$app/paths' {
+	import type { Pathname, ResolvedPathname } from '$app/types';
+
+	export function resolve(path: Pathname): ResolvedPathname;
 }
 
 export {};
