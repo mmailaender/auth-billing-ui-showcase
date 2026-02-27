@@ -1,8 +1,8 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '../lib/assets/favicon.svg';
-	import creemLogoUrl from '$lib/assets/creem-grey.svg';
-	import convexLogoUrl from '$lib/assets/convex-grey.svg';
+	import favicon from '../lib/assets/creem.svg';
+	import creemLogoUrl from '$lib/assets/creem.svg';
+	import convexLogoUrl from '$lib/assets/convex.svg';
 
 	import { createSvelteAuthClient } from '@mmailaender/convex-better-auth-svelte/svelte';
 	import { authClient } from '../lib/auth/api/auth-client';

@@ -13,8 +13,8 @@
 	import { useAuth } from '@mmailaender/convex-better-auth-svelte/svelte';
 	import { useRoles } from '$lib/organizations/api/roles.svelte';
 	import { signInDialog } from '$lib/auth/api/sign-in-dialog.svelte';
-	import creemLogoUrl from '$lib/assets/creem-grey.svg';
-	import convexLogoUrl from '$lib/assets/convex-grey.svg';
+	import creemLogoUrl from '$lib/assets/creem.svg';
+	import convexLogoUrl from '$lib/assets/convex.svg';
 
 	const connectedApi: ConnectedBillingApi = {
 		uiModel: api.billing.uiModel,
