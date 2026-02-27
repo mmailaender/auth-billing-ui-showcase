@@ -26,15 +26,9 @@
 
 <Toaster position="top-center" />
 <AuthDialogProvider initialData={data.initialData}>
-	<div class="grid min-h-[100dvh] grid-rows-[auto_1fr] overflow-x-hidden">
+	<div class="flex flex-col min-h-[100dvh]">
 		<header class="flex items-center justify-between gap-5 p-4">
 			<div class="flex items-center gap-4 text-foreground-placeholder">
-        <span class="inline-flex h-8 w-8 items-center justify-center opacity-70">
-          <img src={convexLogoUrl} alt="Convex" class="h-7 w-7" />
-				</span>
-        <span class="inline-flex h-8 items-center justify-center opacity-70">
-          <img src={creemLogoUrl} alt="Creem" class="h-7 w-auto" />
-        </span>
 				<span class="text-xl font-bold">Convex-Creem</span>
 			</div>
 			<div class="flex items-center gap-4">
