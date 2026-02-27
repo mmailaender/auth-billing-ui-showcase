@@ -36,10 +36,10 @@
 		<Loader2Icon class="flex-shrink-0 animate-spin" />
 	{/snippet}
 	{#snippet successIcon()}
-		<CircleCheckIcon class="text-success-500 flex-shrink-0" />
+		<CircleCheckIcon class="flex-shrink-0 text-success-500" />
 	{/snippet}
 	{#snippet errorIcon()}
-		<CircleXIcon class="text-error-500 flex-shrink-0" />
+		<CircleXIcon class="flex-shrink-0 text-error-500" />
 	{/snippet}
 	{#snippet infoIcon()}
 		<InfoIcon class="flex-shrink-0" />

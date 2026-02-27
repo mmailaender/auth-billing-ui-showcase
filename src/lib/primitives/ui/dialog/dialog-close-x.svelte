@@ -12,7 +12,7 @@
 	bind:ref
 	data-scope="dialog"
 	data-part="close"
-	class="hover:bg-surface-300-700 rounded-base absolute top-5 right-4 p-2 opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+	class="absolute top-5 right-4 rounded-base p-2 opacity-70 transition-opacity hover:bg-surface-300-700 hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
 	type="button"
 	{...restProps}
 >

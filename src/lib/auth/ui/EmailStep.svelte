@@ -83,7 +83,7 @@
 			autocomplete="email"
 			value={email}
 			oninput={(e) => onEmailChange(e.currentTarget.value)}
-			class="input preset-filled-surface-200 text-sm"
+			class="preset-filled-surface-200 input text-sm"
 			placeholder="Enter your email"
 			required
 			disabled={submitting || validatingEmail}
@@ -95,7 +95,7 @@
 		<button
 			type="button"
 			onclick={() => handleMethodClick(availableMethods[0])}
-			class="btn preset-filled w-full"
+			class="btn w-full preset-filled"
 			disabled={submitting || validatingEmail || !email}
 		>
 			{#if validatingEmail}
@@ -116,7 +116,7 @@
 				<button
 					type="button"
 					onclick={() => handleMethodClick('password')}
-					class="btn preset-filled w-full"
+					class="btn w-full preset-filled"
 					disabled={submitting || validatingEmail || !email}
 				>
 					{#if validatingEmail && validatingEmailMethod === 'password'}
@@ -136,7 +136,7 @@
 				<button
 					type="button"
 					onclick={() => handleMethodClick('emailOTP')}
-					class="btn preset-tonal w-full"
+					class="btn w-full preset-tonal"
 					disabled={submitting || validatingEmail || !email}
 				>
 					{#if validatingEmail && validatingEmailMethod === 'emailOTP'}
@@ -156,7 +156,7 @@
 				<button
 					type="button"
 					onclick={() => handleMethodClick('magicLink')}
-					class="btn preset-tonal w-full"
+					class="btn w-full preset-tonal"
 					disabled={submitting || validatingEmail || !email}
 				>
 					{#if validatingEmail && validatingEmailMethod === 'magicLink'}

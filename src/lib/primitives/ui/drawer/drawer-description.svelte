@@ -11,6 +11,6 @@
 <ArkDialogDescription
 	bind:ref
 	data-scope="drawer"
-	class={cn('text-surface-600-400 text-sm', className)}
+	class={cn('text-sm text-surface-600-400', className)}
 	{...restProps}
 />

@@ -126,7 +126,7 @@
 {#if !invitationList}
 	<div>Loading invitations...</div>
 {:else if filteredInvitations.length === 0 && !searchQuery}
-	<div class="text-surface-600-400 p-8 text-center">
+	<div class="p-8 text-center text-surface-600-400">
 		<p>No pending invitations.</p>
 	</div>
 {:else}
@@ -135,11 +135,11 @@
 		<div class="flex flex-shrink-0 items-center gap-3 py-4">
 			<div class="relative flex-1">
 				<div class="pointer-events-none absolute inset-y-0 flex items-center">
-					<SearchIcon class="text-surface-400-600 size-4" />
+					<SearchIcon class="size-4 text-surface-400-600" />
 				</div>
 				<input
 					type="text"
-					class="input w-hug w-full !border-0 !border-transparent pl-6 text-sm"
+					class="w-hug input w-full !border-0 !border-transparent pl-6 text-sm"
 					placeholder="Search invitations..."
 					value={searchQuery}
 					onchange={handleSearchChange}
@@ -150,7 +150,7 @@
 		<!-- Table Section - Scrollable area -->
 		<div class="min-h-0 flex-1">
 			{#if filteredInvitations.length === 0 && searchQuery}
-				<div class="text-surface-600-400 p-8 text-center">
+				<div class="p-8 text-center text-surface-600-400">
 					<p>No invitations match your search.</p>
 				</div>
 			{:else}
@@ -160,13 +160,13 @@
 						class="max-h-[calc(90vh-12rem)] overflow-y-auto pb-12 sm:max-h-[calc(80vh-12rem)] md:max-h-[calc(70vh-12rem)]"
 					>
 						<table class="table w-full !table-fixed">
-							<thead class="border-surface-300-700 sticky top-0 z-20 border-b">
+							<thead class="sticky top-0 z-20 border-b border-surface-300-700">
 								<tr>
-									<th class="text-surface-700-300 w-64 truncate p-2 !pl-0 text-left text-xs">
+									<th class="w-64 truncate p-2 !pl-0 text-left text-xs text-surface-700-300">
 										User
 									</th>
-									<th class="text-surface-700-300 w-32 p-2 !pl-0 text-left text-xs"> Expires </th>
-									<th class="text-surface-700-300 hidden w-32 p-2 text-left text-xs sm:table-cell">
+									<th class="w-32 p-2 !pl-0 text-left text-xs text-surface-700-300"> Expires </th>
+									<th class="hidden w-32 p-2 text-left text-xs text-surface-700-300 sm:table-cell">
 										Role
 									</th>
 									{#if isOwnerOrAdmin}
@@ -176,7 +176,7 @@
 							</thead>
 							<tbody>
 								{#each filteredInvitations as invitation (invitation.id)}
-									<tr class="!border-surface-300-700 !border-t">
+									<tr class="!border-t !border-surface-300-700">
 										<!-- User -->
 										<td class="!w-64 !max-w-64 !truncate !py-3 !pl-0">
 											<span class="truncate font-medium">{invitation.email}</span>
@@ -188,23 +188,23 @@
 											</span>
 										</td>
 										<!-- Role -->
-										<td class="!text-surface-700-300 hidden !w-32 sm:table-cell">
+										<td class="hidden !w-32 !text-surface-700-300 sm:table-cell">
 											<div class="flex items-center">
 												{#if invitation.role === 'owner'}
 													<span
-														class="badge preset-filled-primary-50-950 border-primary-200-800 h-6 border px-2"
+														class="badge h-6 border border-primary-200-800 preset-filled-primary-50-950 px-2"
 													>
 														Owner
 													</span>
 												{:else if invitation.role === 'admin'}
 													<span
-														class="badge preset-filled-warning-50-950 border-warning-200-800 h-6 border px-2"
+														class="badge h-6 border border-warning-200-800 preset-filled-warning-50-950 px-2"
 													>
 														Admin
 													</span>
 												{:else}
 													<span
-														class="badge preset-filled-surface-300-700 border-surface-400-600 h-6 border px-2"
+														class="badge h-6 border border-surface-400-600 preset-filled-surface-300-700 px-2"
 													>
 														Member
 													</span>

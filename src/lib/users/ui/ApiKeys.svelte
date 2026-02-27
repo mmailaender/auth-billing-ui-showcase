@@ -232,7 +232,7 @@
 </script>
 
 <div class="flex w-full flex-col gap-3 pb-6">
-	<span class="text-surface-600-400 text-xs">API Keys</span>
+	<span class="text-xs text-surface-600-400">API Keys</span>
 	<!-- List api keys with name, creation data, expiry data -->
 	{#if apiKeys}
 		{#if apiKeys.length > 0}
@@ -399,7 +399,7 @@
 					<Dialog.Title>Your new API key</Dialog.Title>
 				</Dialog.Header>
 				<p class="text-sm">Copy and store this key now. You won’t be able to see it again.</p>
-				<div class="input-group mt-4 grid-cols-[1fr_auto]">
+				<div class="mt-4 input-group grid-cols-[1fr_auto]">
 					<input class="ig-input" readonly value={newKey} />
 					<Toggle.Root
 						bind:pressed={copied}

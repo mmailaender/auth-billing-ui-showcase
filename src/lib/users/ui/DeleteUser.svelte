@@ -59,7 +59,7 @@
 
 <Dialog.Root bind:open={deleteDialogOpen}>
 	<Dialog.Trigger
-		class="preset-faded-surface-50-950 btn rounded-base btn-sm text-surface-600-400 hover:bg-error-300-700 hover:text-error-950-50 justify-between gap-1 text-sm"
+		class="preset-faded-surface-50-950 btn btn-sm justify-between gap-1 rounded-base text-sm text-surface-600-400 hover:bg-error-300-700 hover:text-error-950-50"
 		>Delete account</Dialog.Trigger
 	>
 	<Dialog.Content class="md:max-w-108">

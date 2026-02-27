@@ -178,7 +178,7 @@
 				type="email"
 				value={email}
 				disabled
-				class="input preset-filled-surface-200 cursor-not-allowed opacity-60"
+				class="preset-filled-surface-200 input cursor-not-allowed opacity-60"
 			/>
 		</div>
 
@@ -188,7 +188,7 @@
 				<input
 					type="text"
 					bind:value={name}
-					class="input preset-filled-surface-200"
+					class="preset-filled-surface-200 input"
 					placeholder="Enter your full name"
 					autocomplete="name"
 					required
@@ -202,7 +202,7 @@
 			<input
 				type="text"
 				bind:value={otp}
-				class="input preset-filled-surface-200"
+				class="preset-filled-surface-200 input"
 				placeholder="Enter verification code"
 				pattern="[0-9]*"
 				inputmode="numeric"
@@ -218,7 +218,7 @@
 	<div class="flex flex-col gap-2">
 		<button
 			type="submit"
-			class="btn preset-filled w-full"
+			class="btn w-full preset-filled"
 			disabled={submitting || !otp.trim() || !otpSent || (mode === 'register' && !name.trim())}
 		>
 			{#if submitting}

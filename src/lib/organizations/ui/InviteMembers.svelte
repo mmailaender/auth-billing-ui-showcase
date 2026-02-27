@@ -169,7 +169,7 @@
 					required
 				></textarea>
 			</label>
-			<p class="text-surface-600-400 px-1 text-xs">
+			<p class="px-1 text-xs text-surface-600-400">
 				You can invite multiple people by separating email addresses with commas, semicolons, or
 				spaces.
 			</p>
@@ -184,7 +184,7 @@
 			</button>
 		</div>
 		{#if !AUTH_CONSTANTS.sendEmails}
-			<div class="text-error-600-400 px-1 text-xs">
+			<div class="px-1 text-xs text-error-600-400">
 				Sending Emails is not enabled. Please enable to send invitations.
 			</div>
 		{/if}

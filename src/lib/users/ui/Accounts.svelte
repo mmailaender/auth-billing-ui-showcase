@@ -414,13 +414,13 @@
 <div class="flex w-full flex-col gap-3 pb-6">
 	<!-- Current Accounts -->
 	<div>
-		<span class="text-surface-600-400 text-xs">Linked Accounts</span>
+		<span class="text-xs text-surface-600-400">Linked Accounts</span>
 		{#if accountList && accountList.length > 0}
 			<div class="flex flex-col gap-3 pt-3">
 				{#each accountList as account (account.id)}
 					{@const ProviderIcon = getProviderIcon(account.providerId)}
 
-					<div class="border-surface-300-700 rounded-container flex w-full flex-col border p-3">
+					<div class="flex w-full flex-col rounded-container border border-surface-300-700 p-3">
 						<div class="flex w-full flex-row items-center justify-between">
 							<div class="flex items-center gap-3 pl-1">
 								<ProviderIcon size={16} />
@@ -431,7 +431,7 @@
 							<div class="flex items-center">
 								{#if account.providerId === 'credential'}
 									<button
-										class="btn btn-sm preset-tonal mr-2"
+										class="mr-2 btn btn-sm preset-tonal"
 										onclick={async () => {
 											isEditingPasswordInline = true;
 											currentPassword = '';
@@ -445,7 +445,7 @@
 								{/if}
 								{#if accountList.length > 1}
 									<button
-										class="btn-icon preset-faded-surface-50-950 hover:bg-error-300-700 hover:text-error-950-50"
+										class="preset-faded-surface-50-950 btn-icon hover:bg-error-300-700 hover:text-error-950-50"
 										disabled={unlinkingAccountId === account.id}
 										onclick={() => unlinkAccount(account.accountId, account.providerId)}
 									>
@@ -500,7 +500,7 @@
 										<div class="flex gap-1.5">
 											<button
 												type="button"
-												class="btn btn-sm preset-tonal w-full"
+												class="btn btn-sm w-full preset-tonal"
 												onclick={() => {
 													currentPassword = '';
 													newPassword = '';
@@ -512,7 +512,7 @@
 											</button>
 											<button
 												type="submit"
-												class="btn btn-sm preset-filled-primary-500 w-full"
+												class="btn btn-sm w-full preset-filled-primary-500"
 												disabled={isChangingPassword || !currentPassword || !newPassword}
 											>
 												{isChangingPassword ? 'Changing...' : 'Change Password'}
@@ -526,7 +526,7 @@
 				{/each}
 			</div>
 		{:else}
-			<div class="text-surface-600-400 mt-2 text-sm">No accounts found</div>
+			<div class="mt-2 text-sm text-surface-600-400">No accounts found</div>
 		{/if}
 	</div>
 
@@ -546,7 +546,7 @@
 				</Select.Content>
 			</Select.Root>
 			{#if isLinking}
-				<p class="text-surface-600-400 mt-2 text-sm">Linking account...</p>
+				<p class="mt-2 text-sm text-surface-600-400">Linking account...</p>
 			{/if}
 		</div>
 	{/if}
@@ -580,10 +580,10 @@
 						</Password.Root>
 					</label>
 					<Dialog.Footer>
-						<Dialog.Close class="btn preset-tonal w-full md:w-fit">Cancel</Dialog.Close>
+						<Dialog.Close class="btn w-full preset-tonal md:w-fit">Cancel</Dialog.Close>
 						<button
 							type="submit"
-							class="btn preset-filled-primary-500 w-full md:w-fit"
+							class="btn w-full preset-filled-primary-500 md:w-fit"
 							disabled={isSettingPassword}
 						>
 							{#if isSettingPassword}
@@ -628,10 +628,10 @@
 						</Password.Root>
 					</label>
 					<Drawer.Footer>
-						<Drawer.Close class="btn preset-tonal w-full md:w-fit">Cancel</Drawer.Close>
+						<Drawer.Close class="btn w-full preset-tonal md:w-fit">Cancel</Drawer.Close>
 						<button
 							type="submit"
-							class="btn preset-filled-primary-500 w-full md:w-fit"
+							class="btn w-full preset-filled-primary-500 md:w-fit"
 							disabled={isSettingPassword}
 						>
 							{#if isSettingPassword}

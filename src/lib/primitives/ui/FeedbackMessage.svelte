@@ -17,7 +17,7 @@
 
 {#if successMessage}
 	<div
-		class="card preset-outlined-success-500 grid grid-cols-1 items-center gap-4 p-4 lg:grid-cols-[1fr_auto]"
+		class="grid grid-cols-1 items-center gap-4 card preset-outlined-success-500 p-4 lg:grid-cols-[1fr_auto]"
 	>
 		<div>
 			<p class="font-bold">Success</p>
@@ -31,7 +31,7 @@
 
 {#if errorMessage}
 	<div
-		class="card preset-outlined-error-500 grid grid-cols-1 items-center gap-4 p-4 lg:grid-cols-[auto_1fr_auto]"
+		class="grid grid-cols-1 items-center gap-4 card preset-outlined-error-500 p-4 lg:grid-cols-[auto_1fr_auto]"
 	>
 		<TriangleAlertIcon />
 		<div>

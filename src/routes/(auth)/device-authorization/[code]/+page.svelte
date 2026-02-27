@@ -73,21 +73,21 @@
 		{#if verifyLoading}
 			<p class="opacity-80">Verifying your code…</p>
 		{:else if verifyError}
-			<div class="rounded-container bg-error-50-950 text-error-contrast-50-950 mb-4 p-3">
+			<div class="mb-4 rounded-container bg-error-50-950 p-3 text-error-contrast-50-950">
 				<p>{verifyError}</p>
 			</div>
 			<p class="text-sm opacity-80">
 				Check that you opened this page from the device and that the URL contains a valid code.
 			</p>
 		{:else if actionDone === 'approved'}
-			<div class="rounded-container text-success-contrast-50-950 bg-success-50-950 mb-4 p-3">
+			<div class="mb-4 rounded-container bg-success-50-950 p-3 text-success-contrast-50-950">
 				<p>Success! You approved the request.</p>
 			</div>
 			<p class="opacity-80">
 				You can return to the device now. The device should connect automatically.
 			</p>
 		{:else if actionDone === 'denied'}
-			<div class="rounded-container text-warning-contrast-50-950 bg-warning-50-950 mb-4 p-3">
+			<div class="mb-4 rounded-container bg-warning-50-950 p-3 text-warning-contrast-50-950">
 				<p>Request denied.</p>
 			</div>
 			<p class="opacity-80">You can close this window.</p>
@@ -95,7 +95,7 @@
 			<p class="mb-6 opacity-80">Do you want to sign in on your device?</p>
 
 			{#if actionError}
-				<div class="rounded-container bg-error-50-950 text-error-contrast-50-950 mb-4 p-3">
+				<div class="mb-4 rounded-container bg-error-50-950 p-3 text-error-contrast-50-950">
 					<p>{actionError}</p>
 				</div>
 			{/if}

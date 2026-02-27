@@ -9,6 +9,9 @@
 	import SignIn from '../../auth/ui/SignIn.svelte';
 	import SignOutButton from '../../auth/ui/SignOutButton.svelte';
 
+	// Shared state
+	import { signInDialog } from '../../auth/api/sign-in-dialog.svelte';
+
 	// SvelteKit navigation/state
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
@@ -56,7 +59,6 @@
 
 	// State
 	let userPopoverOpen = $state(false);
-	let signInDialogOpen = $state(false);
 	let avatarStatus = $state('');
 
 	// Ensure SignIn form resets every time the dialog opens
@@ -81,10 +83,10 @@
 
 	// Bump key when dialog transitions from closed -> open to remount SignIn
 	$effect(() => {
-		if (signInDialogOpen && !prevSignInDialogOpen) {
+		if (signInDialog.isOpen && !prevSignInDialogOpen) {
 			signInKey += 1;
 		}
-		prevSignInDialogOpen = signInDialogOpen;
+		prevSignInDialogOpen = signInDialog.isOpen;
 	});
 </script>
 
@@ -99,7 +101,7 @@
 	>
 		<Popover.Trigger>
 			<Avatar.Root
-				class="ring-surface-100-900 size-9 ring-0 duration-200 ease-out hover:ring-4"
+				class="size-9 ring-0 ring-surface-100-900 duration-200 ease-out hover:ring-4"
 				onStatusChange={(details) => (avatarStatus = details.status)}
 			>
 				<Avatar.Image src={activeUser?.image} alt={activeUser?.name} />
@@ -115,7 +117,7 @@
 		<Popover.Content>
 			<div class="flex flex-col gap-1 p-0">
 				<button
-					class="bg-surface-50-950 hover:bg-surface-100-900 rounded-container flex flex-row items-center gap-4 p-3 pr-6 duration-200 ease-in-out"
+					class="flex flex-row items-center gap-4 rounded-container bg-surface-50-950 p-3 pr-6 duration-200 ease-in-out hover:bg-surface-100-900"
 					onclick={openProfileModal}
 				>
 					<Avatar.Root class="size-12">
@@ -134,7 +136,7 @@
 				</button>
 				<SignOutButton
 					onSuccess={() => (userPopoverOpen = false)}
-					class="btn preset-faded-surface-50-950 hover:bg-surface-200-800 h-10 justify-between gap-1 text-sm"
+					class="preset-faded-surface-50-950 btn h-10 justify-between gap-1 text-sm hover:bg-surface-200-800"
 				/>
 			</div>
 		</Popover.Content>
@@ -142,14 +144,15 @@
 {:else if auth.isLoading}
 	<div class="placeholder-circle size-10 animate-pulse"></div>
 {:else}
-	<button class="btn preset-filled-primary-500" onclick={() => (signInDialogOpen = true)}>
+	<button class="btn preset-filled-primary-500" onclick={() => signInDialog.open()}>
 		Sign in
 	</button>
 {/if}
 <!-- SignIn Dialog - Outside of auth wrappers to prevent disappearing during registration -->
 <Dialog.Root
-	bind:open={signInDialogOpen}
+	open={signInDialog.isOpen}
 	onOpenChange={(status) => {
+		signInDialog.isOpen = status.open;
 		// When dialog closes, bump the key so next open is a fresh mount
 		if (!status.open) {
 			signInKey += 1;
@@ -157,10 +160,10 @@
 	}}
 >
 	<Dialog.Content
-		class="sm:rounded-container h-full max-h-[100dvh] w-full rounded-none sm:h-auto sm:max-h-[90vh] sm:w-4xl sm:max-w-md"
+		class="h-full max-h-[100dvh] w-full rounded-none sm:h-auto sm:max-h-[90vh] sm:w-4xl sm:max-w-md sm:rounded-container"
 	>
 		{#key signInKey}
-			<SignIn onSignIn={() => (signInDialogOpen = false)} class="p-2 sm:p-8" />
+			<SignIn onSignIn={() => signInDialog.close()} class="p-2 sm:p-8" />
 		{/key}
 		<Dialog.CloseX />
 	</Dialog.Content>

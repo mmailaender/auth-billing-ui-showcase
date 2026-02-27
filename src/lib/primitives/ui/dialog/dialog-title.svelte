@@ -9,6 +9,6 @@
 	bind:ref
 	data-scope="dialog"
 	data-part="title"
-	class={cn('h5 text-left leading-none tracking-tight', className)}
+	class={cn('text-left h5 leading-none tracking-tight', className)}
 	{...restProps}
 />

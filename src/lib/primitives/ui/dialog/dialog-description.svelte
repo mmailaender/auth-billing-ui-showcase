@@ -11,6 +11,6 @@
 <ArkDialogDescription
 	bind:ref
 	data-slot="dialog-description"
-	class={cn('text-surface-600-400 w-full text-left text-sm', className)}
+	class={cn('w-full text-left text-sm text-surface-600-400', className)}
 	{...restProps}
 />

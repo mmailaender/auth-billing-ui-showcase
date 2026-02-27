@@ -87,12 +87,12 @@
 
 <div class="flex flex-col gap-6">
 	{#if !activeUser}
-		<div class="placeholder h-16 w-full animate-pulse"></div>
+		<div class="h-16 placeholder w-full animate-pulse"></div>
 	{:else}
 		<!-- Inline editable email (matches ProfileInfo.svelte UX) -->
 		<div
 			class={[
-				'border-surface-300-700 rounded-container relative w-full border px-3.5 py-2 transition-all duration-200 ease-in-out',
+				'relative w-full rounded-container border border-surface-300-700 px-3.5 py-2 transition-all duration-200 ease-in-out',
 				{
 					'cursor-pointer': !isEditingEmail,
 					'hover:bg-surface-200-800': !isEditingEmail,
@@ -102,7 +102,7 @@
 		>
 			<div class="flex items-center justify-between gap-3 transition-all duration-200 ease-in-out">
 				<div class="flex w-full flex-col">
-					<span class="text-surface-600-400 text-xs">Email Address</span>
+					<span class="text-xs text-surface-600-400">Email Address</span>
 					<!-- View mode (collapses when editing) -->
 					<div
 						class={[
@@ -149,7 +149,7 @@
 								<div class="mb-1 flex gap-1.5">
 									<button
 										type="button"
-										class="btn btn-sm preset-tonal w-full"
+										class="btn btn-sm w-full preset-tonal"
 										onclick={() => {
 											newEmail = activeUser.email;
 											isEditingEmail = false;
@@ -160,7 +160,7 @@
 									</button>
 									<button
 										type="submit"
-										class="btn btn-sm preset-filled-primary-500 w-full"
+										class="btn btn-sm w-full preset-filled-primary-500"
 										disabled={isSubmitting ||
 											!newEmail ||
 											newEmail.trim() === '' ||
@@ -176,7 +176,7 @@
 				<!-- Edit affordance and full-area overlay button in view mode -->
 				{#if !isEditingEmail}
 					<div class="shrink-0">
-						<span class=" btn-icon preset-filled-surface-50-950 pointer-events-none p-2">
+						<span class=" pointer-events-none btn-icon preset-filled-surface-50-950 p-2">
 							<PencilIcon class="size-4" />
 						</span>
 					</div>

@@ -9,7 +9,7 @@
 	bind:ref
 	data-slot="tabs-list"
 	class={cn(
-		'text-surface-700-300 rounded-base bg-transparent',
+		'rounded-base bg-transparent text-surface-700-300',
 		'inline-flex items-center justify-center gap-1',
 		'data-[orientation=horizontal]:w-fit',
 		'data-[orientation=vertical]:w-full data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start',

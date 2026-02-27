@@ -239,21 +239,21 @@
 		<div class="flex flex-col">
 			<!-- Circle -->
 			<div class="mb-4 flex">
-				<div class="bg-surface-200-800 flex h-16 w-16 items-center justify-center rounded-full">
-					<MailIcon class="text-surface-600-400 size-8" />
+				<div class="flex h-16 w-16 items-center justify-center rounded-full bg-surface-200-800">
+					<MailIcon class="size-8 text-surface-600-400" />
 				</div>
 			</div>
 
 			<!-- Info -->
-			<h3 class="h5 w-full text-left leading-8">Check your email</h3>
-			<p class="text-surface-600-400 mt-2 text-sm">
+			<h3 class="w-full text-left h5 leading-8">Check your email</h3>
+			<p class="mt-2 text-sm text-surface-600-400">
 				{#if verifyContext === 'magicLink'}
 					We've sent a magic link to <strong>{email}</strong>.
 				{:else}
 					We've sent a verification link to <strong>{email}</strong>.
 				{/if}
 			</p>
-			<p class="text-surface-600-400 pb-8 text-sm">
+			<p class="pb-8 text-sm text-surface-600-400">
 				{#if verifyContext === 'magicLink'}
 					Click the link in your email to sign in instantly.
 				{:else}
@@ -267,8 +267,8 @@
 			</button>
 		</div>
 	{:else}
-		<h5 class="h5 w-full text-left leading-8">{getStepTitle()}</h5>
-		<p class="text-surface-600-400 mt-2 max-w-96 pb-16 text-left text-sm sm:pb-12">
+		<h5 class="w-full text-left h5 leading-8">{getStepTitle()}</h5>
+		<p class="mt-2 max-w-96 pb-16 text-left text-sm text-surface-600-400 sm:pb-12">
 			{getStepDescription()}
 		</p>
 
@@ -343,7 +343,7 @@
 
 		{#if showLegal}
 			<div>
-				<p class="text-surface-600-400 mt-10 text-xs">
+				<p class="mt-10 text-xs text-surface-600-400">
 					By continuing, you agree to our
 					{#if showTerms}
 						<a href={termsUrl} rel="external noreferrer" class="anchor text-surface-950-50">Terms</a

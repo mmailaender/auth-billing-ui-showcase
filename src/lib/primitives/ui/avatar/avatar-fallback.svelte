@@ -6,6 +6,6 @@
 </script>
 
 <ArkAvatarFallback
-	class={cn('bg-muted flex size-full items-center justify-center rounded-full', className)}
+	class={cn('flex size-full items-center justify-center rounded-full bg-muted', className)}
 	{...restProps}
 />

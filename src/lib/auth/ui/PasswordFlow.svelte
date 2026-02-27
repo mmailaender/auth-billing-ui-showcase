@@ -167,7 +167,7 @@
 				type="email"
 				value={email}
 				disabled
-				class="input preset-filled-surface-200 cursor-not-allowed opacity-60"
+				class="preset-filled-surface-200 input cursor-not-allowed opacity-60"
 			/>
 		</div>
 
@@ -177,7 +177,7 @@
 				<input
 					name="name"
 					type="text"
-					class="input preset-filled-surface-200"
+					class="preset-filled-surface-200 input"
 					placeholder="Enter your full name"
 					required
 					disabled={submitting}
@@ -205,7 +205,7 @@
 				<div class="flex flex-row items-center justify-end pt-1">
 					<button
 						type="button"
-						class="anchor mb-1 shrink-0 text-xs"
+						class="mb-1 shrink-0 anchor text-xs"
 						onclick={handleForgotPassword}
 						disabled={submitting || isRequestingReset}
 					>
@@ -218,7 +218,7 @@
 
 	<!-- Actions -->
 	<div class="flex flex-col gap-2">
-		<button type="submit" class="btn preset-filled w-full" disabled={submitting}>
+		<button type="submit" class="btn w-full preset-filled" disabled={submitting}>
 			{#if submitting}
 				<div class="flex items-center gap-2">
 					<div

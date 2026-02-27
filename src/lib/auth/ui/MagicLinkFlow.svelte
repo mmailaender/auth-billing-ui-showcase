@@ -160,7 +160,7 @@
 			type="email"
 			value={email}
 			disabled
-			class="input preset-filled-surface-200 cursor-not-allowed opacity-60"
+			class="preset-filled-surface-200 input cursor-not-allowed opacity-60"
 		/>
 	</div>
 
@@ -170,7 +170,7 @@
 			<input
 				type="text"
 				bind:value={name}
-				class="input preset-filled-surface-200"
+				class="preset-filled-surface-200 input"
 				placeholder="Enter your full name"
 				autocomplete="name"
 				required
@@ -180,7 +180,7 @@
 	{/if}
 
 	{#if mode === 'register' && emailChecked}
-		<button type="submit" class="btn preset-filled w-full" disabled={submitting || !name.trim()}>
+		<button type="submit" class="btn w-full preset-filled" disabled={submitting || !name.trim()}>
 			{#if submitting}
 				<div class="flex items-center gap-2">
 					<div
@@ -200,7 +200,7 @@
 				<div
 					class="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"
 				></div>
-				<span class="text-surface-600-400 text-sm">Checking email...</span>
+				<span class="text-sm text-surface-600-400">Checking email...</span>
 			</div>
 		</div>
 	{/if}

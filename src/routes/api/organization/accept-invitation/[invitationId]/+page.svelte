@@ -56,7 +56,7 @@
 </script>
 
 <div class="flex min-h-dvh items-center justify-center p-6">
-	<div class="card w-full max-w-md p-8 text-center">
+	<div class="w-full max-w-md card p-8 text-center">
 		{#if isLoading}
 			<div class="flex flex-col items-center gap-4">
 				<Loader2Icon class="size-10 animate-spin" />

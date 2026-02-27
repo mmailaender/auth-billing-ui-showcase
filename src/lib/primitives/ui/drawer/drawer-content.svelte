@@ -35,13 +35,13 @@
 			data-scope="drawer"
 			data-side={side}
 			class={cn(
-				'group/drawer-content bg-surface-100-900 fixed z-50 flex h-auto flex-col p-6',
+				'group/drawer-content fixed z-50 flex h-auto flex-col bg-surface-100-900 p-6',
 				side === 'top' && 'inset-x-0 top-0 mb-24 max-h-[80vh] rounded-b-lg ',
 				side === 'bottom' && 'inset-x-0 bottom-0 mt-24 max-h-[80vh] rounded-t-lg',
 				side === 'right' && 'inset-y-0 right-0 w-3/4 sm:max-w-sm',
 				side === 'left' && 'inset-y-0 left-0 w-3/4 sm:max-w-sm',
 				// Animate: fade and directional slide based on side + state
-				'data-[state=open]:animate-in data-[state=closed]:animate-out duration-200',
+				'duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in',
 				'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
 				// Enter animations per side
 				'data-[side=left]:data-[state=open]:slide-in-from-left-2',

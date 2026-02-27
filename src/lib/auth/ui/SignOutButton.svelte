@@ -25,7 +25,7 @@
 
 <button
 	class={cn(
-		'btn preset-faded-surface-50-950 hover:bg-surface-200-800 h-10 justify-between gap-1 text-sm',
+		'preset-faded-surface-50-950 btn h-10 justify-between gap-1 text-sm hover:bg-surface-200-800',
 		className
 	)}
 	onclick={handleSignOut}
