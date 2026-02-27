@@ -1,5 +1,5 @@
-import { Creem, checkoutCreateArgs, type ApiResolver } from '@mmailaender/convex-creem';
-import { ConvexError, v } from 'convex/values';
+import { Creem, checkoutCreateArgs, subscriptionCancelArgs, subscriptionPauseArgs, subscriptionResumeArgs, subscriptionUpdateArgs, type ApiResolver } from '@mmailaender/convex-creem';
+import { ConvexError } from 'convex/values';
 import type { GenericMutationCtx } from 'convex/server';
 import { api, components } from './_generated/api';
 import type { DataModel } from './_generated/dataModel';
@@ -120,18 +120,7 @@ export const customersPortalUrl = action({
 // ─── Full control: mutations (subscription management) ───────────────
 
 export const subscriptionsUpdate = mutation({
-	args: {
-		subscriptionId: v.optional(v.string()),
-		productId: v.optional(v.string()),
-		units: v.optional(v.number()),
-		updateBehavior: v.optional(
-			v.union(
-				v.literal('proration-charge-immediately'),
-				v.literal('proration-charge'),
-				v.literal('proration-none')
-			)
-		)
-	},
+	args: subscriptionUpdateArgs,
 	handler: async (ctx, args): Promise<void> => {
 		const auth = await resolveAuthMutation(ctx);
 		requireAdminOrOwner(auth.role);
@@ -143,9 +132,7 @@ export const subscriptionsUpdate = mutation({
 });
 
 export const subscriptionsCancel = mutation({
-	args: {
-		revokeImmediately: v.optional(v.boolean())
-	},
+	args: subscriptionCancelArgs,
 	handler: async (ctx, args): Promise<void> => {
 		const auth = await resolveAuthMutation(ctx);
 		requireAdminOrOwner(auth.role);
@@ -157,23 +144,25 @@ export const subscriptionsCancel = mutation({
 });
 
 export const subscriptionsResume = mutation({
-	args: {},
-	handler: async (ctx): Promise<void> => {
+	args: subscriptionResumeArgs,
+	handler: async (ctx, args): Promise<void> => {
 		const auth = await resolveAuthMutation(ctx);
 		requireAdminOrOwner(auth.role);
 		await creem.subscriptions.resume(ctx, {
-			entityId: auth.entityId
+			entityId: auth.entityId,
+			...args
 		});
 	}
 });
 
 export const subscriptionsPause = mutation({
-	args: {},
-	handler: async (ctx): Promise<void> => {
+	args: subscriptionPauseArgs,
+	handler: async (ctx, args): Promise<void> => {
 		const auth = await resolveAuthMutation(ctx);
 		requireAdminOrOwner(auth.role);
 		await creem.subscriptions.pause(ctx, {
-			entityId: auth.entityId
+			entityId: auth.entityId,
+			...args
 		});
 	}
 });
