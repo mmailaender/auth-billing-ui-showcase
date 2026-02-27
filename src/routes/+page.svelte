@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { setupConvex } from 'convex-svelte';
 	import {
 		CheckoutSuccessSummary,
 		BillingPortal,
@@ -40,7 +39,7 @@
 	const isAdmin = $derived(roles.hasOwnerRole || roles.hasAdminRole);
 
 	const permissions = $derived({
-		canCheckout: isAdmin,
+		canCheckout: auth.isAuthenticated ? isAdmin : true,
 		canChangeSubscription: isAdmin,
 		canCancelSubscription: isAdmin,
 		canResumeSubscription: isAdmin,
