@@ -39,7 +39,7 @@
 	const isAdmin = $derived(roles.hasOwnerRole || roles.hasAdminRole);
 
 	const permissions = $derived({
-		canCheckout: auth.isAuthenticated ? isAdmin : true,
+		canCheckout: isAdmin,
 		canChangeSubscription: isAdmin,
 		canCancelSubscription: isAdmin,
 		canResumeSubscription: isAdmin,

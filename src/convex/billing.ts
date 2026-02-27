@@ -1,4 +1,4 @@
-import { Creem, type ApiResolver } from '@mmailaender/convex-creem';
+import { Creem, checkoutCreateArgs, type ApiResolver } from '@mmailaender/convex-creem';
 import { ConvexError, v } from 'convex/values';
 import type { GenericMutationCtx } from 'convex/server';
 import { api, components } from './_generated/api';
@@ -93,11 +93,7 @@ function requireAdminOrOwner(role: string | null): void {
 // ─── Full control: actions (checkout, portal URL) ────────────────────
 
 export const checkoutsCreate = action({
-	args: {
-		productId: v.string(),
-		successUrl: v.optional(v.string()),
-		units: v.optional(v.number())
-	},
+	args: checkoutCreateArgs,
 	handler: async (ctx, args): Promise<{ url: string }> => {
 		const auth = await resolveAuthAction(ctx);
 		requireAdminOrOwner(auth.role);
