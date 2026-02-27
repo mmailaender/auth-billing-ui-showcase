@@ -15,6 +15,7 @@
 	import { signInDialog } from '$lib/auth/api/sign-in-dialog.svelte';
 	import creemLogoUrl from '$lib/assets/creem.svg';
 	import convexLogoUrl from '$lib/assets/convex.svg';
+  import { GithubIcon } from '@lucide/svelte';
 
 	const connectedApi: ConnectedBillingApi = {
 		uiModel: api.billing.uiModel,
@@ -86,6 +87,9 @@
 					<span class="inline-flex h-8 w-8 items-center justify-center opacity-70">
 						<img src={convexLogoUrl} alt="Convex" class="h-7 w-7" />
 					</span>
+          <a href="https://github.com/mmailaender/convex-creem" target="_blank" rel="noopener noreferrer">
+            <GithubIcon class="size-6" />
+          </a>
 				</div>
 			</div>
 
