@@ -24,7 +24,7 @@
 
 <Toaster position="top-center" />
 <AuthDialogProvider initialData={data.initialData}>
-	<div class="bg-surface-subtle text-foreground-default flex min-h-[100dvh] flex-col">
+	<div class="flex min-h-[100dvh] flex-col bg-surface-subtle text-foreground-default">
 		<header class="flex items-center justify-between gap-5 p-4">
 			<div class="flex items-center gap-4 text-foreground-placeholder">
 				<span class="text-xl font-bold">Convex-Creem</span>

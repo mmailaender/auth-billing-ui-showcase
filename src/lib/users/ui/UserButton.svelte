@@ -144,9 +144,7 @@
 {:else if auth.isLoading}
 	<div class="placeholder-circle size-10 animate-pulse"></div>
 {:else}
-	<button class="button-filled" onclick={() => signInDialog.open()}>
-		Sign in
-	</button>
+	<button class="button-filled" onclick={() => signInDialog.open()}> Sign in </button>
 {/if}
 <!-- SignIn Dialog - Outside of auth wrappers to prevent disappearing during registration -->
 <Dialog.Root

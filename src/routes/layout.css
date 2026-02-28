@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "@mmailaender/convex-creem/styles";
+@import '@mmailaender/convex-creem/styles';
 @plugin '@tailwindcss/forms';
 @import 'tw-animate-css';
 

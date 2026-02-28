@@ -67,6 +67,35 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Convex Creem — Billing Widgets for Convex Apps</title>
+	<meta
+		name="description"
+		content="Production-ready subscription, one-time purchase, and billing widgets for Convex. Powered by Creem. Supports Svelte and React."
+	/>
+	<meta
+		name="keywords"
+		content="Convex, Creem, billing, subscriptions, payments, SaaS, Svelte, React, pricing widgets"
+	/>
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Convex Creem — Billing Widgets for Convex Apps" />
+	<meta
+		property="og:description"
+		content="Drop-in subscription plans, one-time purchases, seat-based billing, and customer portal — all wired to Convex in minutes."
+	/>
+	<meta property="og:site_name" content="Convex Creem" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Convex Creem — Billing Widgets for Convex Apps" />
+	<meta
+		name="twitter:description"
+		content="Drop-in subscription plans, one-time purchases, seat-based billing, and customer portal — all wired to Convex in minutes."
+	/>
+</svelte:head>
+
 <main class="w-full py-10 lg:pt-16">
 	<header class="border-b border-border-subtle pb-16 lg:pb-[104px]">
 		<div
@@ -74,11 +103,11 @@
 		>
 			<div class="space-y-6 lg:col-span-7">
 				<h1 class="max-w-[720px] display-m text-foreground-default">
-					Creem Billing Widgets for Convex
+					Drop-in Billing for Convex Apps
 				</h1>
 				<p class="max-w-[720px] subtitle-m text-foreground-default">
-					These widgets query Convex directly through the Creem wrapper API, with backend-derived
-					billing state in the UI model. Supporting React and Svelte.
+					Subscriptions, one-time purchases, seat-based pricing, and a customer portal — all powered
+					by Creem and wired to your Convex backend. Available for React and Svelte.
 				</p>
 				<div class="pt-8 text-foreground-placeholder">
 					<div class="flex items-center gap-4">
@@ -139,7 +168,7 @@
 					href="https://github.com/mmailaender/convex-creem"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="button-outline inline-flex  items-center justify-center gap-2"
+					class="button-outline inline-flex items-center justify-center gap-2"
 				>
 					<GithubIcon class="size-4" />
 					<span>Github</span>
