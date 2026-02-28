@@ -15,7 +15,7 @@
 	import { signInDialog } from '$lib/auth/api/sign-in-dialog.svelte';
 	import creemLogoUrl from '$lib/assets/creem.svg';
 	import convexLogoUrl from '$lib/assets/convex.svg';
-  import { GithubIcon } from '@lucide/svelte';
+	import { GithubIcon } from '@lucide/svelte';
 
 	const connectedApi: ConnectedBillingApi = {
 		uiModel: api.billing.uiModel,
@@ -80,16 +80,15 @@
 					These widgets query Convex directly through the Creem wrapper API, with backend-derived
 					billing state in the UI model. Supporting React and Svelte.
 				</p>
-				<div class="flex items-center gap-4 pt-8 text-foreground-placeholder">
-					<span class="inline-flex h-8 items-center justify-center opacity-70">
-						<img src={creemLogoUrl} alt="Creem" class="h-7 w-auto" />
-					</span>
-					<span class="inline-flex h-8 w-8 items-center justify-center opacity-70">
-						<img src={convexLogoUrl} alt="Convex" class="h-7 w-7" />
-					</span>
-          <a href="https://github.com/mmailaender/convex-creem" target="_blank" rel="noopener noreferrer">
-            <GithubIcon class="size-6" />
-          </a>
+				<div class="pt-8 text-foreground-placeholder">
+					<div class="flex items-center gap-4">
+						<span class="inline-flex h-8 items-center justify-center opacity-70">
+							<img src={creemLogoUrl} alt="Creem" class="h-7 w-auto" />
+						</span>
+						<span class="inline-flex h-8 w-8 items-center justify-center opacity-70">
+							<img src={convexLogoUrl} alt="Convex" class="h-7 w-7" />
+						</span>
+					</div>
 				</div>
 			</div>
 
@@ -136,6 +135,15 @@
 						</div>
 					</div>
 				</div>
+				<a
+					href="https://github.com/mmailaender/convex-creem"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="button-outline inline-flex  items-center justify-center gap-2"
+				>
+					<GithubIcon class="size-4" />
+					<span>Github</span>
+				</a>
 			</nav>
 		</div>
 	</header>

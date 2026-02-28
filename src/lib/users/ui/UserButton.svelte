@@ -144,7 +144,7 @@
 {:else if auth.isLoading}
 	<div class="placeholder-circle size-10 animate-pulse"></div>
 {:else}
-	<button class="btn preset-filled-primary-500" onclick={() => signInDialog.open()}>
+	<button class="button-filled" onclick={() => signInDialog.open()}>
 		Sign in
 	</button>
 {/if}
