@@ -700,7 +700,7 @@ packages:
       svelte: ^5.0.0
 
   '@mmailaender/convex-creem@file:node_modules_local/mmailaender-convex-creem-0.0.1.tgz':
-    resolution: {integrity: sha512-BhyjNyMqimu25dZ2LjuENVTsTjLlZNVsc38KkqfC2EQHP7EcFWrZL/tDScS2AoKCP6Ja5EfKrvEn0kzhlNhqxA==, tarball: file:node_modules_local/mmailaender-convex-creem-0.0.1.tgz}
+    resolution: {integrity: sha512-Q3ohtJJbuMQKHXBMwkhf6EJEDcRb2EvAoKegyeiuHTKC7NsCZ7DIT9j7w6zwwsOZASrwKP13DorkAJD7UpIwLw==, tarball: file:node_modules_local/mmailaender-convex-creem-0.0.1.tgz}
     version: 0.0.1
     peerDependencies:
       '@ark-ui/react': ^5.31.0
