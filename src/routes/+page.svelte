@@ -11,8 +11,8 @@
 	} from '@mmailaender/convex-creem/svelte';
 	import { api } from '$convex/_generated/api.js';
 	import { useAuth } from '@mmailaender/convex-better-auth-svelte/svelte';
-	import { useRoles } from '$lib/organizations/api/roles.svelte';
 	import { signInDialog } from '$lib/auth/api/sign-in-dialog.svelte';
+	import { demoRole } from '$lib/demo/demo-role.svelte';
 	import creemLogoUrl from '$lib/assets/creem.svg';
 	import convexLogoUrl from '$lib/assets/convex.svg';
 	import ogImage from '$lib/assets/og-image.png';
@@ -33,19 +33,16 @@
 		}
 	};
 
-	// ─── Auth & role-based permissions ──────────────────────────────────
+	// ─── Demo role-based permissions (from localStorage) ────────────────
 	const auth = useAuth();
-	const roles = useRoles();
-
-	const isAdmin = $derived(roles.hasOwnerRole || roles.hasAdminRole);
 
 	const permissions = $derived({
-		canCheckout: isAdmin,
-		canChangeSubscription: isAdmin,
-		canCancelSubscription: isAdmin,
-		canResumeSubscription: isAdmin,
-		canUpdateSeats: isAdmin,
-		canAccessPortal: isAdmin
+		canCheckout: demoRole.isAdmin,
+		canChangeSubscription: demoRole.isAdmin,
+		canCancelSubscription: demoRole.isAdmin,
+		canResumeSubscription: demoRole.isAdmin,
+		canUpdateSeats: demoRole.isAdmin,
+		canAccessPortal: demoRole.isAdmin
 	});
 
 	// ─── Pre-checkout gate: open sign-in if unauthenticated ────────────
@@ -184,6 +181,19 @@
 		<CheckoutSuccessSummary
 			class="rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900"
 		/>
+
+		<!-- Test card info -->
+		<div
+			class="rounded-container border border-surface-300-700 bg-surface-100-900 px-4 py-3 text-sm text-foreground-muted"
+		>
+			<span class="font-medium text-foreground-default">Test card:</span>
+			<code class="ml-1 rounded bg-surface-200-800 px-1.5 py-0.5 font-mono text-xs"
+				>4242 4242 4242 4242</code
+			>
+			<span class="ml-2 text-foreground-placeholder"
+				>— any future expiry, any CVC, any cardholder name</span
+			>
+		</div>
 
 		<!-- ─── Section 1: Subscriptions with trial (all 4 billing cycles) ─── -->
 		<section
