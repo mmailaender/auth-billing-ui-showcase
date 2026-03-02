@@ -207,8 +207,8 @@
 						With Trial (4 Cycles)
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						All four billing cycles are available. The toggle derives from the registered plans
-						automatically.
+						Subscription plans with a free trial. Monthly, quarterly, semi-annual, and annual
+						billing cycles — the cycle toggle appears automatically from the registered plans.
 					</p>
 				</div>
 
@@ -297,11 +297,11 @@
 				<div class="mx-auto max-w-[620px] text-center">
 					<h2 class="heading-l text-foreground-default">
 						<span class="text-foreground-placeholder">Subscription</span><br />
-						Seat-Based (User-Selectable)
+						Without Trial (Monthly Only)
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						Seat-based plans with a quantity picker. The user selects how many seats before
-						checkout.
+						Monthly-only plans with no trial period. Since only one billing cycle is registered, the
+						cycle toggle is hidden automatically.
 					</p>
 				</div>
 
@@ -362,7 +362,8 @@
 						Seat-Based (User-Selectable)
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						Only monthly products registered. The billing toggle should not appear.
+						Per-seat pricing where the customer picks how many seats before checkout. The seat
+						picker lets users choose their team size.
 					</p>
 				</div>
 
@@ -394,7 +395,7 @@
 			</div>
 		</section>
 
-		<!-- ─── Section 3b: Seat-based with auto-derived units ─── -->
+		<!-- ─── Section 4: Seat-based with auto-derived units ─── -->
 		<section
 			id="subscription-seat-auto"
 			class="relative left-1/2 w-screen -translate-x-1/2 border-b border-border-subtle pb-[6.5rem]"
@@ -406,8 +407,9 @@
 						Seat-Based (Auto-Derived)
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						Same seat-based products but with a fixed unit count (e.g. derived from organization
-						member count). No picker shown — hardcoded to 5 seats.
+						Per-seat pricing with a fixed seat count derived from your app (e.g. team member count).
+						No picker is shown — the unit count is set programmatically. Hardcoded to 5 in this
+						demo.
 					</p>
 				</div>
 
@@ -436,7 +438,7 @@
 			</div>
 		</section>
 
-		<!-- ─── Section 4: Standalone one-time product ─── -->
+		<!-- ─── Section 5: Standalone one-time product ─── -->
 		<section
 			id="onetime-single"
 			class="relative left-1/2 w-screen -translate-x-1/2 border-b border-border-subtle pb-[6.5rem]"
@@ -448,7 +450,8 @@
 						Single One-Time Product
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						A standalone product purchased once. Shows "Owned" after purchase.
+						A single product that can be purchased once. After purchase, the card displays an
+						"Owned" badge instead of a buy button.
 					</p>
 				</div>
 
@@ -470,7 +473,7 @@
 			</div>
 		</section>
 
-		<!-- ─── Section 5: Mutually exclusive product group with upgrade ─── -->
+		<!-- ─── Section 6: Mutually exclusive product group with upgrade ─── -->
 		<section
 			id="onetime-group"
 			class="relative left-1/2 w-screen -translate-x-1/2 border-b border-border-subtle pb-[6.5rem]"
@@ -482,8 +485,12 @@
 						Mutually Exclusive Product Group
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						Transition graph decides available upgrade paths. Upgrading from Basic to Premium uses a
-						dedicated delta product. Buy first the Basic Product and then upgrade to Premium.
+						A group of products where owning one affects available actions on others. Upgrade paths
+						are defined via a transition graph — upgrading from Basic to Premium uses a dedicated
+						delta product.
+					</p>
+					<p class="mt-2 subtitle-m font-medium text-foreground-default">
+						Try it: Buy the Basic product first, then upgrade to Premium.
 					</p>
 				</div>
 
@@ -503,7 +510,7 @@
 			</div>
 		</section>
 
-		<!-- ─── Section 6: Repeating (consumable) product ─── -->
+		<!-- ─── Section 7: Repeating (consumable) product ─── -->
 		<section
 			id="onetime-repeat"
 			class="relative left-1/2 w-screen -translate-x-1/2 border-b border-border-subtle pb-[6.5rem]"
@@ -515,7 +522,8 @@
 						Repeating Product (Consumable)
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
-						Can be purchased multiple times. No "Owned" badge — always shows the purchase button.
+						A consumable product that can be purchased repeatedly (e.g. credits, tokens). The buy
+						button stays active after every purchase — no "Owned" badge is shown.
 					</p>
 				</div>
 
