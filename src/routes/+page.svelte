@@ -15,6 +15,7 @@
 	import { signInDialog } from '$lib/auth/api/sign-in-dialog.svelte';
 	import creemLogoUrl from '$lib/assets/creem.svg';
 	import convexLogoUrl from '$lib/assets/convex.svg';
+	import ogImage from '$lib/assets/og-image.png';
 	import { GithubIcon } from '@lucide/svelte';
 
 	const connectedApi: ConnectedBillingApi = {
@@ -86,6 +87,7 @@
 		content="Drop-in subscription plans, one-time purchases, seat-based billing, and customer portal — all wired to Convex in minutes."
 	/>
 	<meta property="og:site_name" content="Convex Creem" />
+	<meta property="og:image" content={ogImage} />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -94,6 +96,7 @@
 		name="twitter:description"
 		content="Drop-in subscription plans, one-time purchases, seat-based billing, and customer portal — all wired to Convex in minutes."
 	/>
+	<meta name="twitter:image" content={ogImage} />
 </svelte:head>
 
 <main class="w-full py-10 lg:pt-16">
