@@ -63,6 +63,22 @@
 			viaProductId: 'prod_5LApsYRX8dHbx8QuLJgJ3j'
 		}
 	];
+
+	// ─── Per-plan feature descriptions ─────────────────────────────────
+	const descFree1 = `✔️ Up to 3 projects
+✔️ Basic task boards
+✔️ 500 MB storage
+✔️ Community support`;
+	const descEnterprise1 = `✔️ Everything in Premium
+✔️ Unlimited storage
+✔️ SSO & SAML
+✔️ Dedicated account manager
+✔️ Custom integrations
+✔️ 99.9% SLA`;
+	const descFree2 = `✔️ 1 user included
+✔️ Basic email support
+✔️ 1 GB storage
+✔️ Standard templates`;
 </script>
 
 <svelte:head>
@@ -219,24 +235,7 @@
 						onBeforeCheckout={handleBeforeCheckout}
 						class=""
 					>
-						<Subscription.Item
-							type="free"
-							title="Free"
-							description={`✔️ Up to 3 users
-
-✔️ Basic task management
-
-✔️ Drag & drop builder
-
-✔️ Task deadlines & reminders
-
-✔️ Mobile access
-
-✔️ Priority support
-
-✔️ 1-1 calls
-`}
-						/>
+						<Subscription.Item type="free" title="Free" description={descFree1} />
 						<Subscription.Item
 							planId="basic"
 							type="single"
@@ -263,20 +262,7 @@
 						<Subscription.Item
 							type="enterprise"
 							title="Enterprise"
-							description={`✔️ Up to 3 users
-
-✔️ Basic task management
-
-✔️ Drag & drop builder
-
-✔️ Task deadlines & reminders
-
-✔️ Mobile access
-
-✔️ Priority support
-
-✔️ 1-1 calls
-`}
+							description={descEnterprise1}
 							contactUrl="https://creem.io"
 						/>
 					</Subscription.Root>
@@ -311,24 +297,7 @@
 						{permissions}
 						onBeforeCheckout={handleBeforeCheckout}
 					>
-						<Subscription.Item
-							type="free"
-							title="Free"
-							description={`✔️ Up to 3 users
-
-✔️ Basic task management
-
-✔️ Drag & drop builder
-
-✔️ Task deadlines & reminders
-
-✔️ Mobile access
-
-✔️ Priority support
-
-✔️ 1-1 calls
-`}
-						/>
+						<Subscription.Item type="free" title="Free" description={descFree2} />
 						<Subscription.Item
 							planId="basic-monthly"
 							type="single"
@@ -487,7 +456,7 @@
 					<p class="mt-3 subtitle-m text-foreground-muted">
 						A group of products where owning one affects available actions on others. Upgrade paths
 						are defined via a transition graph — upgrading from Basic to Premium uses a dedicated
-						delta product.
+						delta product. Product images are synced from Creem.
 					</p>
 					<p class="mt-2 subtitle-m font-medium text-foreground-default">
 						Try it: Buy the Basic product first, then upgrade to Premium.
@@ -523,7 +492,8 @@
 					</h2>
 					<p class="mt-3 subtitle-m text-foreground-muted">
 						A consumable product that can be purchased repeatedly (e.g. credits, tokens). The buy
-						button stays active after every purchase — no "Owned" badge is shown.
+						button stays active after every purchase — no "Owned" badge is shown. Product image is
+						synced from Creem.
 					</p>
 				</div>
 
@@ -537,7 +507,11 @@
 						showImages
 						pricingCtaVariant="filled"
 					>
-						<Product.Item type="recurring" productId="prod_73CnZ794MaJ1DUn8MU0O5f" />
+						<Product.Item
+							type="recurring"
+							title="100 AI Credits"
+							productId="prod_73CnZ794MaJ1DUn8MU0O5f"
+						/>
 					</Product.Root>
 				</div>
 			</div>
